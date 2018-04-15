@@ -1,0 +1,8 @@
+<li *ngIf='data'
+  [ngClass]="{'list-group-item': true,
+  'list-group-item-success': data.loveIts > data.dontLoveIts,
+  'list-group-item-danger': data.dontLoveIts > data.loveIts }">
+  <h3>{{data.title}}</h3><div class="right">{{data.created_at | date}}</div>
+  <p>{{data.content}}</p>
+  <button (click)='onLike()'>like</button><button (click)='onDisLike()'>dislike</button>
+</li>
